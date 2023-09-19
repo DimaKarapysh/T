@@ -51,7 +51,21 @@ func process(s *QueueService) {
 	}
 }
 
-func TTl(s *QueueService) {
+func sort(s *QueueService) {
+	for {
+		for i, job := range s.Queue {
+			if strings.EqualFold(job.State, "end") && job.Task.TTL <= 0 {
+				s.Queue = append(s.Queue[:job.NumberOfQueue], s.Queue[job.NumberOfQueue+1:]...)
+			}
+
+			job.NumberOfQueue = i
+		}
+
+		time.Sleep(5 * time.Second)
+	}
+}
+
+func ttl(s *QueueService) {
 	for {
 
 		var job *model.Job
@@ -90,7 +104,8 @@ func NewService(n int) *QueueService {
 		N:     n,
 	}
 	go process(s)
-	go TTl(s)
+	go ttl(s)
+	go sort(s)
 	return s
 }
 
@@ -124,12 +139,12 @@ func (s *QueueService) AddTask(d *model.Task) error {
 }
 
 func (s *QueueService) GetJobs() []*model.Job {
-	for i, job := range s.Queue {
-		if strings.EqualFold(job.State, "end") && job.Task.TTL <= 0 {
-			s.Queue = append(s.Queue[:job.NumberOfQueue], s.Queue[job.NumberOfQueue+1:]...)
-		}
-
-		job.NumberOfQueue = i
-	}
+	//for i, job := range s.Queue {
+	//	if strings.EqualFold(job.State, "end") && job.Task.TTL <= 0 {
+	//		s.Queue = append(s.Queue[:job.NumberOfQueue], s.Queue[job.NumberOfQueue+1:]...)
+	//	}
+	//
+	//	job.NumberOfQueue = i
+	//}
 	return s.Queue
 }
