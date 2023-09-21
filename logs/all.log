@@ -1,0 +1,370 @@
+[INFO](2023-09-21 14:38:24) /Users/egorkozelskij/Downloads/T 2/app/logs.go:88 Hello bro!!
+[INFO](2023-09-21 16:18:09) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:18:09) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:18:09) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration %!d(MISSING)
+[INFO](2023-09-21 16:18:14) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration %!d(MISSING)
+[INFO](2023-09-21 16:18:19) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration %!d(MISSING)
+[INFO](2023-09-21 16:18:39) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:18:39) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:18:39) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2
+[INFO](2023-09-21 16:18:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 16:18:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 16:18:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2
+[INFO](2023-09-21 16:18:44) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3
+[INFO](2023-09-21 16:18:46) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-21 16:18:46) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-21 16:18:46) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 2
+[INFO](2023-09-21 16:18:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 3
+[INFO](2023-09-21 16:18:49) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 4
+[INFO](2023-09-21 16:18:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 3
+[INFO](2023-09-21 16:18:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 4
+[INFO](2023-09-21 16:18:54) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 5
+[INFO](2023-09-21 16:18:56) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 4
+[INFO](2023-09-21 16:18:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 5
+[INFO](2023-09-21 16:18:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-21 16:19:01) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 5
+[INFO](2023-09-21 16:19:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 6
+[INFO](2023-09-21 16:19:06) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 6
+[INFO](2023-09-21 16:19:08) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 7
+[INFO](2023-09-21 16:19:11) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 7
+[INFO](2023-09-21 16:19:13) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 8
+[INFO](2023-09-21 16:19:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 8
+[INFO](2023-09-21 16:19:18) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 9
+[INFO](2023-09-21 16:19:21) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 9
+[INFO](2023-09-21 16:19:23) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 10
+[INFO](2023-09-21 16:19:26) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 10
+[INFO](2023-09-21 16:19:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-21 16:19:31) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 11
+[INFO](2023-09-21 16:19:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 12
+[INFO](2023-09-21 16:19:41) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 13
+[INFO](2023-09-21 16:19:46) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 14
+[INFO](2023-09-21 16:19:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 15
+[INFO](2023-09-21 16:19:56) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 16
+[INFO](2023-09-21 16:20:01) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 17
+[INFO](2023-09-21 16:20:09) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:20:10) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:20:10) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1
+[INFO](2023-09-21 16:20:15) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2
+[INFO](2023-09-21 16:20:20) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3
+[INFO](2023-09-21 16:20:25) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 4
+[INFO](2023-09-21 16:20:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:20:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:20:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=%!f(int=1)
+[INFO](2023-09-21 16:20:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=%!f(int=2)
+[INFO](2023-09-21 16:20:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=%!f(int=3)
+[INFO](2023-09-21 16:20:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:20:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:20:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=%!f(int=01)
+[INFO](2023-09-21 16:20:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=%!f(int=02)
+[INFO](2023-09-21 16:20:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=%!f(int=03)
+[INFO](2023-09-21 16:21:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:21:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:21:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 16:21:08) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 16:21:13) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=3
+[INFO](2023-09-21 16:21:18) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 4. Value=4
+[INFO](2023-09-21 16:21:23) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 5. Value=5
+[INFO](2023-09-21 16:21:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 6. Value=6
+[INFO](2023-09-21 16:21:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 7. Value=7
+[INFO](2023-09-21 16:21:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 8. Value=8
+[INFO](2023-09-21 16:21:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 9. Value=9
+[INFO](2023-09-21 16:21:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 10. Value=10
+[INFO](2023-09-21 16:21:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 11. Value=11
+[INFO](2023-09-21 16:21:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 12. Value=12
+[INFO](2023-09-21 16:22:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 13. Value=13
+[INFO](2023-09-21 16:22:08) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 14. Value=14
+[INFO](2023-09-21 16:22:13) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 15. Value=15
+[INFO](2023-09-21 16:22:18) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 16. Value=16
+[INFO](2023-09-21 16:22:23) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 17. Value=17
+[INFO](2023-09-21 16:22:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 18. Value=18
+[INFO](2023-09-21 16:22:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 19. Value=19
+[INFO](2023-09-21 16:22:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 20. Value=20
+[INFO](2023-09-21 16:22:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 21. Value=21
+[INFO](2023-09-21 16:22:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 22. Value=22
+[INFO](2023-09-21 16:22:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 23. Value=23
+[INFO](2023-09-21 16:22:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 24. Value=24
+[INFO](2023-09-21 16:23:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 25. Value=25
+[INFO](2023-09-21 16:23:08) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 26. Value=26
+[INFO](2023-09-21 16:23:13) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 27. Value=27
+[INFO](2023-09-21 16:23:18) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 28. Value=28
+[INFO](2023-09-21 16:23:23) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 29. Value=29
+[INFO](2023-09-21 16:23:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 30. Value=30
+[INFO](2023-09-21 16:23:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-21 16:27:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:27:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:27:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 16:27:54) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) TTL expired
+[INFO](2023-09-21 16:27:55) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 16:27:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 16:27:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 16:27:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 16:27:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) TTL expired
+[INFO](2023-09-21 16:28:00) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=3
+[INFO](2023-09-21 16:28:02) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 16:28:05) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 4. Value=4
+[INFO](2023-09-21 16:28:07) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 3. Value=3
+[INFO](2023-09-21 16:28:10) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 5. Value=5
+[INFO](2023-09-21 16:28:12) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 4. Value=4
+[INFO](2023-09-21 16:28:15) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 6. Value=6
+[INFO](2023-09-21 16:28:17) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 5. Value=5
+[INFO](2023-09-21 16:28:20) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 7. Value=7
+[INFO](2023-09-21 16:28:22) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-21 16:28:25) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:28:25) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:28:25) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 16:28:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 16:28:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=3
+[INFO](2023-09-21 16:28:40) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 4. Value=4
+[INFO](2023-09-21 16:28:45) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 5. Value=5
+[INFO](2023-09-21 16:28:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-21 16:28:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) TTL expired
+[INFO](2023-09-21 16:29:07) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 16:29:07) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 16:29:07) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 16:29:09) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-21 16:29:09) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-21 16:29:09) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 1. Value=1
+[INFO](2023-09-21 16:29:12) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 16:29:14) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 2. Value=2
+[INFO](2023-09-21 16:29:17) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 3. Value=3
+[INFO](2023-09-21 16:29:19) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 3. Value=3
+[INFO](2023-09-21 16:29:22) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 4. Value=4
+[INFO](2023-09-21 16:29:24) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 4. Value=4
+[INFO](2023-09-21 16:29:27) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 5. Value=5
+[INFO](2023-09-21 16:29:29) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 5. Value=5
+[INFO](2023-09-21 16:29:32) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-21 16:29:34) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) DONE
+[INFO](2023-09-21 16:29:39) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) TTL expired
+[INFO](2023-09-21 16:29:44) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) TTL expired
+[INFO](2023-09-21 16:30:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:30:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:30:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 16:30:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 16:30:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 16:30:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 16:30:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 16:30:41) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 16:30:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-21 16:30:46) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-21 16:30:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) TTL expired
+[INFO](2023-09-21 16:31:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) TTL expired
+[INFO](2023-09-21 16:37:45) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:37:45) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:37:45) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 16:37:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 16:37:55) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-21 16:37:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 16:37:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 16:37:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 16:37:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-21 16:37:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-21 16:37:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 1. Value=1
+[INFO](2023-09-21 16:37:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PENDING
+[INFO](2023-09-21 16:37:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PROGRESS
+[INFO](2023-09-21 16:37:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 1. Value=1
+[INFO](2023-09-21 16:37:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PENDING
+[INFO](2023-09-21 16:37:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PROGRESS
+[INFO](2023-09-21 16:37:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 1. Value=1
+[INFO](2023-09-21 16:38:00) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) in PENDING
+[INFO](2023-09-21 16:38:00) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) in PROGRESS
+[INFO](2023-09-21 16:38:00) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) iteration 1. Value=1
+[INFO](2023-09-21 16:38:02) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 16:38:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 2. Value=2
+[INFO](2023-09-21 16:38:04) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 2. Value=2
+[INFO](2023-09-21 16:38:04) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 2. Value=2
+[INFO](2023-09-21 16:38:05) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) iteration 2. Value=2
+[INFO](2023-09-21 16:38:07) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 3. Value=3
+[INFO](2023-09-21 16:38:08) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 3. Value=3
+[INFO](2023-09-21 16:45:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:45:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:45:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 16:45:19) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 16:45:19) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 16:45:19) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 16:45:21) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 16:45:22) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-21 16:45:22) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-21 16:45:22) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 1. Value=1
+[INFO](2023-09-21 16:45:24) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 16:45:25) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PENDING
+[INFO](2023-09-21 16:45:25) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PROGRESS
+[INFO](2023-09-21 16:45:25) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 1. Value=1
+[INFO](2023-09-21 16:45:26) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=3
+[INFO](2023-09-21 16:45:27) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 2. Value=2
+[INFO](2023-09-21 16:45:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PENDING
+[INFO](2023-09-21 16:45:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PROGRESS
+[INFO](2023-09-21 16:45:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 1. Value=1
+[INFO](2023-09-21 16:45:29) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 3. Value=3
+[INFO](2023-09-21 16:45:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 2. Value=2
+[INFO](2023-09-21 16:45:31) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 4. Value=4
+[INFO](2023-09-21 16:45:32) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) DONE
+[INFO](2023-09-21 16:45:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 2. Value=2
+[INFO](2023-09-21 16:45:34) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 4. Value=4
+[INFO](2023-09-21 16:45:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) DONE
+[INFO](2023-09-21 16:45:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 5. Value=5
+[INFO](2023-09-21 16:45:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 3. Value=3
+[INFO](2023-09-21 16:45:39) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 5. Value=5
+[INFO](2023-09-21 16:45:41) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 6. Value=6
+[INFO](2023-09-21 16:45:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 4. Value=4
+[INFO](2023-09-21 16:45:44) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-21 16:45:46) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 7. Value=7
+[INFO](2023-09-21 16:45:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 5. Value=5
+[INFO](2023-09-21 16:45:49) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) TTL expired
+[INFO](2023-09-21 16:45:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 8. Value=8
+[INFO](2023-09-21 16:45:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) DONE
+[INFO](2023-09-21 16:45:56) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 9. Value=9
+[INFO](2023-09-21 16:46:01) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 10. Value=10
+[INFO](2023-09-21 16:46:04) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) TTL expired
+[INFO](2023-09-21 16:46:06) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 11. Value=11
+[INFO](2023-09-21 16:46:11) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 12. Value=12
+[INFO](2023-09-21 16:46:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 13. Value=13
+[INFO](2023-09-21 16:46:21) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 14. Value=14
+[INFO](2023-09-21 16:51:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:51:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:51:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 16:51:29) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 16:51:29) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 16:51:29) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 1. Value=1
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PENDING
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PROGRESS
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 1. Value=1
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PENDING
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PROGRESS
+[INFO](2023-09-21 16:51:30) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 1. Value=1
+[INFO](2023-09-21 16:51:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 16:51:34) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 16:51:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 2. Value=2
+[INFO](2023-09-21 16:51:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 2. Value=2
+[INFO](2023-09-21 16:51:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 2. Value=2
+[INFO](2023-09-21 16:51:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=3
+[INFO](2023-09-21 16:51:39) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 3. Value=3
+[INFO](2023-09-21 16:51:40) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 3. Value=3
+[INFO](2023-09-21 16:51:40) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 3. Value=3
+[INFO](2023-09-21 16:51:40) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 3. Value=3
+[INFO](2023-09-21 16:51:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 4. Value=4
+[INFO](2023-09-21 16:51:44) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 4. Value=4
+[INFO](2023-09-21 16:51:45) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 4. Value=4
+[INFO](2023-09-21 16:51:45) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 4. Value=4
+[INFO](2023-09-21 16:51:45) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 4. Value=4
+[INFO](2023-09-21 16:51:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 5. Value=5
+[INFO](2023-09-21 16:51:49) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 5. Value=5
+[INFO](2023-09-21 16:51:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 5. Value=5
+[INFO](2023-09-21 16:51:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 5. Value=5
+[INFO](2023-09-21 16:51:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 5. Value=5
+[INFO](2023-09-21 16:51:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-21 16:51:54) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-21 16:51:55) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) DONE
+[INFO](2023-09-21 16:51:55) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) DONE
+[INFO](2023-09-21 16:51:55) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) DONE
+[INFO](2023-09-21 16:52:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 16:52:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 16:52:50) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 16:52:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 16:52:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 16:52:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 16:52:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-21 16:52:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-21 16:52:51) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 1. Value=1
+[INFO](2023-09-21 16:52:52) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PENDING
+[INFO](2023-09-21 16:52:52) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PROGRESS
+[INFO](2023-09-21 16:52:52) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 1. Value=1
+[INFO](2023-09-21 16:52:52) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PENDING
+[INFO](2023-09-21 16:52:52) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PROGRESS
+[INFO](2023-09-21 16:52:52) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 1. Value=1
+[INFO](2023-09-21 16:52:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) in PENDING
+[INFO](2023-09-21 16:52:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) in PROGRESS
+[INFO](2023-09-21 16:52:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) iteration 1. Value=1
+[INFO](2023-09-21 16:52:55) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 16:52:56) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 16:52:56) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 2. Value=2
+[INFO](2023-09-21 16:52:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 2. Value=2
+[INFO](2023-09-21 16:52:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) iteration 2. Value=2
+[INFO](2023-09-21 16:52:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) iteration 2. Value=2
+[INFO](2023-09-21 16:53:00) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-21 16:53:01) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-21 16:53:01) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) DONE
+[INFO](2023-09-21 16:53:02) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) DONE
+[INFO](2023-09-21 16:53:02) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) DONE
+[INFO](2023-09-21 16:53:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) DONE
+[INFO](2023-09-21 16:53:11) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) TTL expired
+[INFO](2023-09-21 16:53:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) TTL expired
+[INFO](2023-09-21 16:53:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) TTL expired
+[INFO](2023-09-21 16:53:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) TTL expired
+[INFO](2023-09-21 16:53:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) TTL expired
+[INFO](2023-09-21 16:53:16) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) TTL expired
+[INFO](2023-09-21 17:00:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 17:00:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 17:00:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 17:00:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 17:00:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 17:00:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 17:00:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-21 17:00:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-21 17:00:36) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 1. Value=1
+[INFO](2023-09-21 17:00:37) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PENDING
+[INFO](2023-09-21 17:00:37) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PROGRESS
+[INFO](2023-09-21 17:00:37) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 1. Value=1
+[INFO](2023-09-21 17:00:40) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 17:00:41) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 17:00:41) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 2. Value=2
+[INFO](2023-09-21 17:00:42) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 2. Value=2
+[INFO](2023-09-21 17:00:45) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=3
+[INFO](2023-09-21 17:00:46) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 3. Value=3
+[INFO](2023-09-21 17:00:46) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 3. Value=3
+[INFO](2023-09-21 17:00:47) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 3. Value=3
+[INFO](2023-09-21 17:01:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-21 17:01:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-21 17:01:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-21 17:01:34) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-21 17:01:34) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-21 17:01:34) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-21 17:01:34) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-21 17:01:35) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PENDING
+[INFO](2023-09-21 17:01:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-21 17:01:39) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-21 17:01:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 3. Value=3
+[INFO](2023-09-21 17:01:44) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 3. Value=3
+[INFO](2023-09-21 17:01:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 4. Value=4
+[INFO](2023-09-21 17:01:49) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 4. Value=4
+[INFO](2023-09-21 17:01:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 5. Value=5
+[INFO](2023-09-21 17:01:54) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 5. Value=5
+[INFO](2023-09-21 17:01:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 6. Value=6
+[INFO](2023-09-21 17:01:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 6. Value=6
+[INFO](2023-09-21 17:02:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 7. Value=7
+[INFO](2023-09-21 17:02:04) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (5) in PENDING
+[INFO](2023-09-21 17:02:04) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 7. Value=7
+[INFO](2023-09-21 17:02:08) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 8. Value=8
+[INFO](2023-09-21 17:02:09) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 8. Value=8
+[INFO](2023-09-21 17:02:13) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (6) in PENDING
+[INFO](2023-09-21 17:02:13) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 9. Value=9
+[INFO](2023-09-21 17:02:14) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 9. Value=9
+[INFO](2023-09-21 17:02:18) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) iteration 10. Value=10
+[INFO](2023-09-21 17:02:19) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) iteration 10. Value=10
+[INFO](2023-09-21 17:02:23) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-21 17:02:23) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-21 17:02:23) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 1. Value=1
+[INFO](2023-09-21 17:02:24) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-21 17:02:24) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) in PROGRESS
+[INFO](2023-09-21 17:02:24) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 1. Value=1
+[INFO](2023-09-21 17:02:28) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 2. Value=2
+[INFO](2023-09-21 17:02:29) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 2. Value=2
+[INFO](2023-09-21 17:02:33) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 3. Value=3
+[INFO](2023-09-21 17:02:34) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 3. Value=3
+[INFO](2023-09-21 17:02:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (1) TTL expired
+[INFO](2023-09-21 17:02:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (2) TTL expired
+[INFO](2023-09-21 17:02:38) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 4. Value=4
+[INFO](2023-09-21 17:02:39) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 4. Value=4
+[INFO](2023-09-21 17:02:43) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 5. Value=5
+[INFO](2023-09-21 17:02:44) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 5. Value=5
+[INFO](2023-09-21 17:02:48) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 6. Value=6
+[INFO](2023-09-21 17:02:49) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 6. Value=6
+[INFO](2023-09-21 17:02:53) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 7. Value=7
+[INFO](2023-09-21 17:02:54) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 7. Value=7
+[INFO](2023-09-21 17:02:57) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (7) in PENDING
+[INFO](2023-09-21 17:02:58) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 8. Value=8
+[INFO](2023-09-21 17:02:59) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 8. Value=8
+[INFO](2023-09-21 17:03:03) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (3) iteration 9. Value=9
+[INFO](2023-09-21 17:03:04) /Users/egorkozelskij/Downloads/T 2/app/logs.go:75 Task (4) iteration 9. Value=9
