@@ -3,7 +3,7 @@ package services
 import (
 	"T/app/core"
 	"T/domain"
-	"context"
+	"sort"
 	"sync"
 	"time"
 )
@@ -97,7 +97,7 @@ func (q *QueueService) RunBackground() {
 	}()
 }
 
-func (q *QueueService) AddTask(ctx context.Context, task *domain.Task) error {
+func (q *QueueService) AddTask(task *domain.Task) error {
 	q.iterId++
 	task.Status = domain.TaskPending
 	task.Id = q.iterId
@@ -109,6 +109,11 @@ func (q *QueueService) AddTask(ctx context.Context, task *domain.Task) error {
 	return nil
 }
 
-func (q *QueueService) GetTasks(ctx context.Context) []*domain.Task {
+func (q *QueueService) GetTasks() []*domain.Task {
+	//any compare
+	sort.Slice(q.tasksRecords, func(i, j int) bool {
+		return q.tasksRecords[i].EndedAt.After(q.tasksRecords[j].EndedAt)
+	})
 	return q.tasksRecords
+
 }
