@@ -418,3 +418,43 @@
 [INFO](2023-09-22 17:18:01) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (6) DONE
 [INFO](2023-09-22 17:18:03) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) TTL expired
 [INFO](2023-09-22 17:18:05) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) TTL expired
+[INFO](2023-09-23 14:18:05) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) in PENDING
+[INFO](2023-09-23 14:18:05) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) in PROGRESS
+[INFO](2023-09-23 14:18:05) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) iteration 1. Value=1
+[INFO](2023-09-23 14:18:05) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) in PENDING
+[INFO](2023-09-23 14:18:05) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) in PROGRESS
+[INFO](2023-09-23 14:18:05) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) iteration 1. Value=1
+[INFO](2023-09-23 14:18:06) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (3) in PENDING
+[INFO](2023-09-23 14:18:07) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (4) in PENDING
+[INFO](2023-09-23 14:18:07) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (5) in PENDING
+[INFO](2023-09-23 14:18:10) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) iteration 2. Value=2
+[INFO](2023-09-23 14:18:10) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) iteration 2. Value=2
+[INFO](2023-09-23 14:18:15) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) iteration 3. Value=3
+[INFO](2023-09-23 14:18:15) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) iteration 3. Value=3
+[INFO](2023-09-23 14:18:20) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) iteration 4. Value=4
+[INFO](2023-09-23 14:18:20) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) iteration 4. Value=4
+[INFO](2023-09-23 14:18:25) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) iteration 5. Value=5
+[INFO](2023-09-23 14:18:25) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) iteration 5. Value=5
+[INFO](2023-09-23 14:18:30) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (1) DONE
+[INFO](2023-09-23 14:18:30) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (3) in PROGRESS
+[INFO](2023-09-23 14:18:30) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (3) iteration 1. Value=1
+[INFO](2023-09-23 14:18:30) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (2) DONE
+[INFO](2023-09-23 14:18:30) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (4) in PROGRESS
+[INFO](2023-09-23 14:18:30) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (4) iteration 1. Value=1
+[INFO](2023-09-23 14:18:35) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (3) iteration 2. Value=2
+[INFO](2023-09-23 14:18:35) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (4) iteration 2. Value=2
+[INFO](2023-09-23 14:18:40) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (3) iteration 3. Value=3
+[INFO](2023-09-23 14:18:40) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (4) iteration 3. Value=3
+[INFO](2023-09-23 14:18:45) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (3) iteration 4. Value=4
+[INFO](2023-09-23 14:18:45) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (4) iteration 4. Value=4
+[INFO](2023-09-23 14:18:50) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (3) iteration 5. Value=5
+[INFO](2023-09-23 14:18:50) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (4) iteration 5. Value=5
+[INFO](2023-09-23 14:18:55) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (3) DONE
+[INFO](2023-09-23 14:18:55) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (5) in PROGRESS
+[INFO](2023-09-23 14:18:55) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (5) iteration 1. Value=1
+[INFO](2023-09-23 14:18:55) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (4) DONE
+[INFO](2023-09-23 14:19:00) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (5) iteration 2. Value=2
+[INFO](2023-09-23 14:19:05) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (5) iteration 3. Value=3
+[INFO](2023-09-23 14:19:10) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (5) iteration 4. Value=4
+[INFO](2023-09-23 14:19:15) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (5) iteration 5. Value=5
+[INFO](2023-09-23 14:19:20) /home/dmitriy/Документы/Документы/T 2/app/logs.go:75 Task (5) DONE

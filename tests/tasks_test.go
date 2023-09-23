@@ -4,7 +4,6 @@ import (
 	"T/app"
 	"T/domain"
 	"T/services"
-	"context"
 	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
@@ -13,7 +12,7 @@ import (
 func Test_PendingCheck(t *testing.T) {
 	const N = 2
 
-	ctx := context.Background()
+	//ctx := context.Background()
 
 	// init logs
 	logger, err := app.InitLogs()
@@ -46,18 +45,18 @@ func Test_PendingCheck(t *testing.T) {
 		TTL: 3,
 	}
 
-	err = service.AddTask(ctx, task1)
+	err = service.AddTask(task1)
 	require.NoError(t, err, "task1 should be handled")
 
-	err = service.AddTask(ctx, task2)
+	err = service.AddTask(task2)
 	require.NoError(t, err, "task2 should be handled")
 
-	err = service.AddTask(ctx, task3)
+	err = service.AddTask(task3)
 	require.NoError(t, err, "task3 should be handled")
 
 	// We have only N active processes (Checking that N+1 task is in pending status)
 	time.Sleep(1 * time.Second)
-	tasks := service.GetTasks(ctx)
+	tasks := service.GetTasks()
 	hasPending := false
 	for _, task := range tasks {
 		if task.Status == domain.TaskPending {
@@ -69,7 +68,7 @@ func Test_PendingCheck(t *testing.T) {
 }
 
 func Test_CorrectAnswerCheck(t *testing.T) {
-	ctx := context.Background()
+	//ctx := context.Background()
 
 	// init logs
 	logger, err := app.InitLogs()
@@ -86,20 +85,20 @@ func Test_CorrectAnswerCheck(t *testing.T) {
 		TTL: 60,
 	}
 
-	err = service.AddTask(ctx, task1)
+	err = service.AddTask(task1)
 	require.NoError(t, err, "task1 should be handled")
 
 	// Checking first tasks for correct answer
-	time.Sleep(time.Duration(task1.N*task1.I+2) * time.Second)
-	correct := task1.N1 + task1.D*task1.N
+	time.Sleep(time.Duration(float64(task1.N)*task1.I+2) * time.Second)
+	correct := task1.N1 + task1.D*float64(task1.N)
 
-	tasks := service.GetTasks(ctx)
+	tasks := service.GetTasks()
 	require.Equal(t, len(tasks), 1, "tasks len should be == 1")
 	require.Equal(t, tasks[0].Result, correct, "tasks answer is not correct")
 }
 
 func Test_TTLCheck(t *testing.T) {
-	ctx := context.Background()
+	//ctx := context.Background()
 
 	// init logs
 	logger, err := app.InitLogs()
@@ -116,15 +115,15 @@ func Test_TTLCheck(t *testing.T) {
 		TTL: 5,
 	}
 
-	err = service.AddTask(ctx, task1)
+	err = service.AddTask(task1)
 	require.NoError(t, err, "task1 should be handled")
 
 	// Checking first tasks for correct answer
-	time.Sleep(time.Duration(task1.N*task1.I+2) * time.Second)
-	tasks := service.GetTasks(ctx)
+	time.Sleep(time.Duration(float64(task1.N)*task1.I+2) * time.Second)
+	tasks := service.GetTasks()
 	require.Equal(t, len(tasks), 1, "tasks len should be == 1")
 
 	time.Sleep(time.Duration(task1.TTL+5) * time.Second)
-	tasks = service.GetTasks(ctx)
+	tasks = service.GetTasks()
 	require.Equal(t, len(tasks), 0, "tasks len should be 0")
 }
