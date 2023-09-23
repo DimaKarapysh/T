@@ -1,7 +1,6 @@
 package domain
 
 import (
-	"context"
 	"time"
 )
 
@@ -16,21 +15,21 @@ const (
 type Task struct {
 	// Static config data for runnable task
 	N   int
-	N1  int
-	D   int
-	I   int
-	TTL int
+	N1  float64
+	D   float64
+	I   float64
+	TTL float64
 
 	// Dynamic data with changing by workers
 	Id               int
 	CurrentIteration int
-	Result           int
+	Result           float64
 	Status           TaskStatus
 	StartedAt        time.Time
 	EndedAt          time.Time
 }
 
 type IQueueService interface {
-	AddTask(context.Context, *Task) error
-	GetTasks(context.Context) []*Task
+	AddTask(*Task) error
+	GetTasks() []*Task
 }

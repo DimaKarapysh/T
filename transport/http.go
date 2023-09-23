@@ -38,7 +38,7 @@ func (t *QueueTransportService) AddTask(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	err = t.service.AddTask(r.Context(), task.DTO())
+	err = t.service.AddTask(task.DTO())
 	if err != nil {
 		rest.ServerError(w, errors.Wrap(err, "AddTask"))
 		return
@@ -48,6 +48,6 @@ func (t *QueueTransportService) AddTask(w http.ResponseWriter, r *http.Request) 
 }
 
 func (t *QueueTransportService) GetTasks(w http.ResponseWriter, r *http.Request) {
-	tasks := t.service.GetTasks(r.Context())
+	tasks := t.service.GetTasks()
 	rest.ServerSuccessStruct(w, FromDomainTasks(tasks))
 }

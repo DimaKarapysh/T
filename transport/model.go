@@ -6,11 +6,11 @@ import (
 )
 
 type Task struct {
-	N   int `json:"n" validate:"required"`
-	N1  int `json:"n1"`
-	D   int `json:"d"`
-	I   int `json:"i"`
-	TTL int `json:"ttl"`
+	N   int     `json:"n" validate:"required"`
+	N1  float64 `json:"n1"`
+	D   float64 `json:"d"`
+	I   float64 `json:"i"`
+	TTL float64 `json:"ttl"`
 }
 
 func (t *Task) DTO() *domain.Task {
@@ -26,12 +26,12 @@ func (t *Task) DTO() *domain.Task {
 type TaskInfo struct {
 	Id               int       `json:"id"`
 	N                int       `json:"n"`
-	N1               int       `json:"n1"`
-	D                int       `json:"d"`
-	I                int       `json:"i"`
-	TTL              int       `json:"ttl"`
+	N1               float64   `json:"n1"`
+	D                float64   `json:"d"`
+	I                float64   `json:"i"`
+	TTL              float64   `json:"ttl"`
 	CurrentIteration int       `json:"current_iteration"`
-	Result           int       `json:"current_result"`
+	Result           float64   `json:"current_result"`
 	Status           string    `json:"status"`
 	StartedAt        time.Time `json:"started_at"`
 	EndedAt          time.Time `json:"ended_at"`
