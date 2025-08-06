@@ -1,0 +1,298 @@
+definitions:
+  T_internal_api_http_v01_errors.ErrorResponse:
+    properties:
+      details:
+        additionalProperties:
+          type: string
+        example:
+          '"description"': '"must be valid UUID"}'
+          '{"field"': '"user_id"'
+        type: object
+      message:
+        example: invalid request
+        type: string
+      reason:
+        example: invalid_guid
+        type: string
+    type: object
+  T_internal_entity.Subscription:
+    properties:
+      created_at:
+        description: Для информации
+        type: string
+      end_date:
+        description: Конец подписки (опционально)
+        type: string
+      id:
+        description: Уникальный идентификатор записи
+        type: string
+      price:
+        description: Цена в рублях
+        type: integer
+      service_name:
+        description: Название сервиса
+        type: string
+      start_date:
+        description: Начало подписки (месяц и год)
+        type: string
+      updated_at:
+        description: Для информации
+        type: string
+      user_id:
+        description: UUID пользователя
+        type: string
+    type: object
+  internal_api_http_v01.CreateSubscriptionRequest:
+    properties:
+      end_date:
+        description: можно пустым
+        example: 12-2025
+        type: string
+      price:
+        example: 400
+        type: integer
+      service_name:
+        example: Yandex Plus
+        type: string
+      start_date:
+        description: формат MM-YYYY
+        example: 07-2025
+        type: string
+      user_id:
+        example: 60601fee-2bf1-4721-ae6f-7636e79a0cba
+        type: string
+    type: object
+  internal_api_http_v01.TotalRequest:
+    properties:
+      from:
+        description: MM-YYYY
+        example: 06-2024
+        type: string
+      service_name:
+        example: Netflix
+        type: string
+      to:
+        example: 08-2025
+        type: string
+      user_id:
+        example: 60601fee-2bf1-4721-ae6f-7636e79a0cba
+        type: string
+    type: object
+  internal_api_http_v01.UpdateSubscriptionRequest:
+    properties:
+      end_date:
+        description: можно пустым
+        example: 12-2025
+        type: string
+      price:
+        example: 400
+        type: integer
+      service_name:
+        example: Yandex Plus
+        type: string
+      start_date:
+        description: формат MM-YYYY
+        example: 07-2025
+        type: string
+      user_id:
+        example: 60601fee-2bf1-4721-ae6f-7636e79a0cba
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/v1/subscriptions:
+    get:
+      consumes:
+      - application/json
+      description: Пагинированный список подписок
+      parameters:
+      - default: 20
+        description: Максимум записей
+        in: query
+        maximum: 100
+        minimum: 1
+        name: limit
+        type: integer
+      - default: 0
+        description: Смещение
+        in: query
+        minimum: 0
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/T_internal_entity.Subscription'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+      summary: Получение списка подписок
+      tags:
+      - Subscriptions
+    post:
+      consumes:
+      - application/json
+      description: Создание новой подписки для пользователя
+      parameters:
+      - description: Тело запроса
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/internal_api_http_v01.CreateSubscriptionRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: ID созданной подписки
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+      summary: Создать подписку
+      tags:
+      - Subscriptions
+  /api/v1/subscriptions/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Удаляет подписку по её UUID (мягкое или жёсткое удаление зависит
+        от реализации)
+      parameters:
+      - description: ID подписки (UUID)
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+      summary: Удалить подписку
+      tags:
+      - Subscriptions
+    get:
+      consumes:
+      - application/json
+      description: Возвращает подписку по UUID
+      parameters:
+      - description: ID подписки (UUID)
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/T_internal_entity.Subscription'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+      summary: Получить подписку по ID
+      tags:
+      - Subscriptions
+    put:
+      consumes:
+      - application/json
+      description: Обновление полей существующей подписки
+      parameters:
+      - description: ID подписки (UUID)
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Тело запроса
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/internal_api_http_v01.UpdateSubscriptionRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+      summary: Обновить подписку
+      tags:
+      - Subscriptions
+  /api/v1/subscriptions/total:
+    post:
+      consumes:
+      - application/json
+      description: Фильтрация по пользователю, сервису и периоду (через JSON)
+      parameters:
+      - description: Фильтры
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/internal_api_http_v01.TotalRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: integer
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
+      summary: Получение общей стоимости подписок
+      tags:
+      - Subscriptions
+swagger: "2.0"

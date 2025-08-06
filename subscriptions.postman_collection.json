@@ -1,0 +1,105 @@
+{
+  "info": {
+    "name": "Subscriptions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Subscription",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": \"6ba7b814-9dad-11d1-80b4-00c04fd430c8\",\n  \"service_name\": \"Netflix\",\n  \"price\": 999,\n  \"start_date\": \"08-2025\",\n  \"end_date\": \"12-2025\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/subscriptions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "subscriptions"]
+        }
+      }
+    },
+    {
+      "name": "Get Subscription By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/v1/subscriptions/{{subscription_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "subscriptions", "{{subscription_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Update Subscription",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": \"6ba7b814-9dad-11d1-80b4-00c04fd430c8\",\n  \"service_name\": \"Netflix Premium\",\n  \"price\": 1299,\n  \"start_date\": \"08-2025\",\n  \"end_date\": \"01-2026\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/subscriptions/{{subscription_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "subscriptions", "{{subscription_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Delete Subscription",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/api/v1/subscriptions/{{subscription_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "subscriptions", "{{subscription_id}}"]
+        }
+      }
+    },
+    {
+      "name": "List Subscriptions",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/v1/subscriptions?limit=10&offset=0",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "subscriptions"],
+          "query": [
+            { "key": "limit", "value": "10" },
+            { "key": "offset", "value": "0" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Total Price",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": \"6ba7b814-9dad-11d1-80b4-00c04fd430c8\",\n  \"service_name\": \"Netflix\",\n  \"start_from\": \"2025-08-01\",\n  \"end_to\": \"2025-12-31\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/subscriptions/total",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "subscriptions", "total"]
+        }
+      }
+    }
+  ]
+}

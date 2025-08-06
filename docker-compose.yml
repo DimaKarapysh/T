@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  auth:
+    container_name: subscription
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env.docker
+    depends_on:
+      - redis
+      - postgres
+
+  redis:
+    image: redis:6.2-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    env_file:
+      - .env.docker
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    ports:
+      - "${HOST_POSTGRES_PORT:-5433}:5432"
+    env_file:
+      - .env.docker
+    environment:
+      POSTGRES_DB: auth
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
