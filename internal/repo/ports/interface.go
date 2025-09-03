@@ -4,20 +4,17 @@ import (
 	"T/internal/entity"
 	"T/internal/repo/redis"
 	"context"
+
 	"github.com/google/uuid"
 )
 
 type Repository interface {
-	Create(ctx context.Context, s *entity.Subscription) error
-	GetByID(ctx context.Context, id uuid.UUID) (*entity.Subscription, error)
-	Update(ctx context.Context, s *entity.Subscription) error
+	Create(ctx context.Context, s *entity.Task) (uuid.UUID, error)
+	GetByID(ctx context.Context, id uuid.UUID) (*entity.Task, error)
+	Update(ctx context.Context, s *entity.Task) error
 	Delete(ctx context.Context, id uuid.UUID) error
-	List(ctx context.Context, limit, offset int) ([]*entity.Subscription, error)
-	Get(ctx context.Context) ([]*entity.Subscription, error)
-
-	// Total подсчёт суммы всех подписок по фильтру
-	Total(ctx context.Context, filter *entity.TotalFilter) ([]*entity.Subscription, error)
-	TotalSQL(ctx context.Context, filter *entity.TotalFilter) (int, error)
+	List(ctx context.Context, limit, offset int) ([]*entity.Task, error)
+	Get(ctx context.Context) ([]*entity.Task, error)
 }
 
 type Session interface {

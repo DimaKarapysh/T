@@ -2,6 +2,7 @@ package bootstrap
 
 import (
 	"T/internal/config"
+
 	"go.uber.org/fx"
 )
 
@@ -16,6 +17,8 @@ func CommonModules() fx.Option {
 			InitLogger,
 			InitValidator,
 			NewFiber,
+			newOpenTelemetry,
+			newTracer,
 		),
 	)
 }

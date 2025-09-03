@@ -5,6 +5,8 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"os"
+
 	"github.com/jackc/pgx/v5/pgxpool"
 	_ "github.com/lib/pq"
 	"github.com/pressly/goose/v3"
@@ -12,7 +14,6 @@ import (
 	"go.uber.org/fx"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"os"
 )
 
 func NewPostgresClient(
@@ -28,7 +29,13 @@ func NewPostgresClient(
 		cfg.Postgres.Database,
 	)
 
-	pool, err := pgxpool.New(context.Background(), dsn)
+	parseConfig, err := pgxpool.ParseConfig(dsn)
+	if err != nil {
+		logger.Error("pgx parse config failed", zap.Error(err))
+		return nil, err
+	}
+
+	pool, err := pgxpool.NewWithConfig(context.Background(), parseConfig)
 	if err != nil {
 		logger.Error("failed to connect to PostgreSQL", zap.Error(err))
 		return nil, err

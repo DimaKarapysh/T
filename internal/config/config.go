@@ -7,6 +7,9 @@ import (
 	"github.com/kelseyhightower/envconfig"
 )
 
+type JaegerConfig struct {
+	Endpoint string `envconfig:"JAEGER_ENDPOINT" default:"http://localhost:14268/api/traces"`
+}
 type JWTConfig struct {
 	Secret     string        `envconfig:"JWT_SECRET" required:"true"`
 	AccessTTL  time.Duration `envconfig:"APP_TOKEN_TIME_LIVE" default:"30m"`
@@ -36,6 +39,7 @@ type Config struct {
 	JWT         JWTConfig
 	Postgres    PostgresConfig
 	Redis       RedisConfig
+	Jaeger      JaegerConfig
 }
 
 func Load() *Config {

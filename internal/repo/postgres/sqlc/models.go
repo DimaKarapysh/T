@@ -5,20 +5,16 @@
 package sqlc
 
 import (
-	"time"
-
 	"github.com/google/uuid"
 	"github.com/jackc/pgx/v5/pgtype"
 )
 
-type Subscription struct {
-	ID          uuid.UUID          `json:"id"`
-	ServiceName string             `json:"service_name"`
-	Price       int32              `json:"price"`
-	UserID      uuid.UUID          `json:"user_id"`
-	StartDate   time.Time          `json:"start_date"`
-	EndDate     *time.Time         `json:"end_date"`
-	CreatedAt   time.Time          `json:"created_at"`
-	UpdatedAt   time.Time          `json:"updated_at"`
-	DeletedAt   pgtype.Timestamptz `json:"deleted_at"`
+type Task struct {
+	ID          uuid.UUID        `json:"id"`
+	Title       string           `json:"title"`
+	Description pgtype.Text      `json:"description"`
+	Status      pgtype.Text      `json:"status"`
+	CreatedAt   pgtype.Timestamp `json:"created_at"`
+	UpdatedAt   pgtype.Timestamp `json:"updated_at"`
+	DeletedAt   pgtype.Timestamp `json:"deleted_at"`
 }

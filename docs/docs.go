@@ -15,9 +15,9 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/api/v1/subscriptions": {
+        "/api/v1/tasks": {
             "get": {
-                "description": "Пагинированный список подписок",
+                "description": "Пагинированный список задач",
                 "consumes": [
                     "application/json"
                 ],
@@ -25,9 +25,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Subscriptions"
+                    "Tasks"
                 ],
-                "summary": "Получение списка подписок",
+                "summary": "Получение списка задач",
                 "parameters": [
                     {
                         "maximum": 100,
@@ -53,7 +53,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/T_internal_entity.Subscription"
+                                "$ref": "#/definitions/T_internal_entity.Task"
                             }
                         }
                     },
@@ -72,7 +72,7 @@ const docTemplate = `{
                 }
             },
             "post": {
-                "description": "Создание новой подписки для пользователя",
+                "description": "Создание новой задачи для пользователя",
                 "consumes": [
                     "application/json"
                 ],
@@ -80,9 +80,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Subscriptions"
+                    "Tasks"
                 ],
-                "summary": "Создать подписку",
+                "summary": "Создать задачу",
                 "parameters": [
                     {
                         "description": "Тело запроса",
@@ -90,13 +90,13 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/internal_api_http_v01.CreateSubscriptionRequest"
+                            "$ref": "#/definitions/internal_api_http_v01.CreateTaskRequest"
                         }
                     }
                 ],
                 "responses": {
                     "201": {
-                        "description": "ID созданной подписки",
+                        "description": "ID созданной задачи",
                         "schema": {
                             "type": "object",
                             "additionalProperties": {
@@ -119,58 +119,9 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/subscriptions/total": {
-            "post": {
-                "description": "Фильтрация по пользователю, сервису и периоду (через JSON)",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Subscriptions"
-                ],
-                "summary": "Получение общей стоимости подписок",
-                "parameters": [
-                    {
-                        "description": "Фильтры",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/internal_api_http_v01.TotalRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "integer"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/T_internal_api_http_v01_errors.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/T_internal_api_http_v01_errors.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/subscriptions/{id}": {
+        "/api/v1/tasks/{id}": {
             "get": {
-                "description": "Возвращает подписку по UUID",
+                "description": "Возвращает задачу по UUID",
                 "consumes": [
                     "application/json"
                 ],
@@ -178,13 +129,13 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Subscriptions"
+                    "Tasks"
                 ],
-                "summary": "Получить подписку по ID",
+                "summary": "Получить задачу по ID",
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "ID подписки (UUID)",
+                        "description": "ID задачи (UUID)",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -194,7 +145,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/T_internal_entity.Subscription"
+                            "$ref": "#/definitions/T_internal_entity.Task"
                         }
                     },
                     "400": {
@@ -218,7 +169,7 @@ const docTemplate = `{
                 }
             },
             "put": {
-                "description": "Обновление полей существующей подписки",
+                "description": "Обновление полей существующей задачи",
                 "consumes": [
                     "application/json"
                 ],
@@ -226,13 +177,13 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Subscriptions"
+                    "Tasks"
                 ],
-                "summary": "Обновить подписку",
+                "summary": "Обновить задачу",
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "ID подписки (UUID)",
+                        "description": "ID задачи (UUID)",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -243,7 +194,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/internal_api_http_v01.UpdateSubscriptionRequest"
+                            "$ref": "#/definitions/internal_api_http_v01.UpdateTaskRequest"
                         }
                     }
                 ],
@@ -266,7 +217,7 @@ const docTemplate = `{
                 }
             },
             "delete": {
-                "description": "Удаляет подписку по её UUID (мягкое или жёсткое удаление зависит от реализации)",
+                "description": "Удаляет задачу по её UUID (мягкое или жёсткое удаление зависит от реализации)",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,13 +225,13 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Subscriptions"
+                    "Tasks"
                 ],
-                "summary": "Удалить подписку",
+                "summary": "Удалить задачу",
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "ID подписки (UUID)",
+                        "description": "ID задачи (UUID)",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -330,116 +281,93 @@ const docTemplate = `{
                 }
             }
         },
-        "T_internal_entity.Subscription": {
+        "T_internal_entity.Status": {
+            "type": "string",
+            "enum": [
+                "new",
+                "in_progress",
+                "done"
+            ],
+            "x-enum-varnames": [
+                "StatusNew",
+                "StatusInProgress",
+                "StatusDone"
+            ]
+        },
+        "T_internal_entity.Task": {
             "type": "object",
             "properties": {
                 "created_at": {
-                    "description": "Для информации",
                     "type": "string"
                 },
-                "end_date": {
-                    "description": "Конец подписки (опционально)",
+                "delete_at": {
+                    "type": "string"
+                },
+                "description": {
                     "type": "string"
                 },
                 "id": {
-                    "description": "Уникальный идентификатор записи",
                     "type": "string"
                 },
-                "price": {
-                    "description": "Цена в рублях",
-                    "type": "integer"
+                "status": {
+                    "$ref": "#/definitions/T_internal_entity.Status"
                 },
-                "service_name": {
-                    "description": "Название сервиса",
-                    "type": "string"
-                },
-                "start_date": {
-                    "description": "Начало подписки (месяц и год)",
+                "title": {
                     "type": "string"
                 },
                 "updated_at": {
-                    "description": "Для информации",
-                    "type": "string"
-                },
-                "user_id": {
-                    "description": "UUID пользователя",
                     "type": "string"
                 }
             }
         },
-        "internal_api_http_v01.CreateSubscriptionRequest": {
+        "internal_api_http_v01.CreateTaskRequest": {
             "type": "object",
             "properties": {
-                "end_date": {
-                    "description": "можно пустым",
+                "description": {
                     "type": "string",
-                    "example": "12-2025"
+                    "example": "Нужно реализовать CRUD на Fiber"
                 },
-                "price": {
-                    "type": "integer",
-                    "example": 400
+                "status": {
+                    "description": "допустимые значения: new, in_progress, done",
+                    "enum": [
+                        "new",
+                        "in_progress",
+                        "done"
+                    ],
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/T_internal_entity.Status"
+                        }
+                    ]
                 },
-                "service_name": {
+                "title": {
                     "type": "string",
-                    "example": "Yandex Plus"
-                },
-                "start_date": {
-                    "description": "формат MM-YYYY",
-                    "type": "string",
-                    "example": "07-2025"
-                },
-                "user_id": {
-                    "type": "string",
-                    "example": "60601fee-2bf1-4721-ae6f-7636e79a0cba"
+                    "example": "Сделать тестовое задание"
                 }
             }
         },
-        "internal_api_http_v01.TotalRequest": {
+        "internal_api_http_v01.UpdateTaskRequest": {
             "type": "object",
             "properties": {
-                "from": {
-                    "description": "MM-YYYY",
+                "description": {
                     "type": "string",
-                    "example": "06-2024"
+                    "example": "Добавить больше деталей"
                 },
-                "service_name": {
-                    "type": "string",
-                    "example": "Netflix"
+                "status": {
+                    "enum": [
+                        "new",
+                        "in_progress",
+                        "done"
+                    ],
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/T_internal_entity.Status"
+                        }
+                    ]
                 },
-                "to": {
+                "title": {
                     "type": "string",
-                    "example": "08-2025"
-                },
-                "user_id": {
-                    "type": "string",
-                    "example": "60601fee-2bf1-4721-ae6f-7636e79a0cba"
-                }
-            }
-        },
-        "internal_api_http_v01.UpdateSubscriptionRequest": {
-            "type": "object",
-            "properties": {
-                "end_date": {
-                    "description": "можно пустым",
-                    "type": "string",
-                    "example": "12-2025"
-                },
-                "price": {
-                    "type": "integer",
-                    "example": 400
-                },
-                "service_name": {
-                    "type": "string",
-                    "example": "Yandex Plus"
-                },
-                "start_date": {
-                    "description": "формат MM-YYYY",
-                    "type": "string",
-                    "example": "07-2025"
-                },
-                "user_id": {
-                    "type": "string",
-                    "example": "60601fee-2bf1-4721-ae6f-7636e79a0cba"
+                    "example": "Обновлённый заголовок"
                 }
             }
         }

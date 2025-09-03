@@ -12,16 +12,15 @@ type SubscriptionHandler interface {
 	Update(c *fiber.Ctx) error
 	Delete(c *fiber.Ctx) error
 	List(c *fiber.Ctx) error
-	Total(c *fiber.Ctx) error // Сумма подписок по фильтрам
+	Get(c *fiber.Ctx) error
 }
 
 func RegisterRoutes(router fiber.Router, h HttpHandler) {
-	router.Post("/subscriptions", h.Create)
-	router.Get("/subscriptions/:id", h.GetByID)
-	router.Put("/subscriptions/:id", h.Update)
-	router.Delete("/subscriptions/:id", h.Delete)
-	router.Get("/subscriptions", h.List)
+	router.Post("/tasks", h.Create)
+	router.Get("/tasks/:id", h.GetByID)
+	router.Put("/tasks/:id", h.Update)
+	router.Delete("/tasks/:id", h.Delete)
+	router.Get("/tasks", h.List)
+	router.Get("/task", h.Get)
 
-	// ручка для подсчета общей стоимости по фильтрам
-	router.Post("/subscriptions/total", h.Total)
 }

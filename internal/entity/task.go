@@ -1,8 +1,9 @@
 package entity
 
 import (
-	"github.com/google/uuid"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type AuthUser struct {
@@ -29,4 +30,31 @@ type TotalFilter struct {
 	ServiceName string
 	StartFrom   time.Time  // inclusive
 	EndTo       *time.Time // inclusive
+}
+
+type Status string
+
+const (
+	StatusNew        Status = "new"
+	StatusInProgress Status = "in_progress"
+	StatusDone       Status = "done"
+)
+
+func (s Status) IsValid() bool {
+	switch s {
+	case StatusNew, StatusInProgress, StatusDone:
+		return true
+	default:
+		return false
+	}
+}
+
+type Task struct {
+	ID          uuid.UUID  `json:"id"`
+	Title       string     `json:"title"`
+	Description *string    `json:"description,omitempty"`
+	Status      Status     `json:"status"`
+	CreatedAt   time.Time  `json:"created_at"`
+	UpdatedAt   time.Time  `json:"updated_at"`
+	DeleteAt    *time.Time `json:"delete_at,omitempty"`
 }

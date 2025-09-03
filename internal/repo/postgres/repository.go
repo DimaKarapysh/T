@@ -4,107 +4,128 @@ import (
 	"T/internal/entity"
 	"T/internal/errwrap"
 	"T/internal/repo/postgres/sqlc"
+	"T/internal/util"
 	"context"
 	"errors"
+	"time"
+
 	"github.com/google/uuid"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgtype"
+	"go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
 )
 
 type RepoSub struct {
 	queries *sqlc.Queries
 	logg    *zap.Logger
+	trace   trace.Tracer
 }
 
-func NewRepoSub(queries *sqlc.Queries, logg *zap.Logger) *RepoSub {
+func NewRepoSub(queries *sqlc.Queries, logg *zap.Logger, tr trace.Tracer) *RepoSub {
 	return &RepoSub{
 		queries: queries,
 		logg:    logg,
+		trace:   tr,
 	}
 }
 
-func (a *RepoSub) Create(ctx context.Context, sub *entity.Subscription) error {
+func (a *RepoSub) Create(ctx context.Context, sub *entity.Task) (id uuid.UUID, err error) {
 	const op = "CreateSub"
-	logger := a.logg.With(zap.String("op", op), zap.String("user_id", sub.UserID.String()))
+	logger := a.logg.With(zap.String("op", op), zap.String("task_id", sub.ID.String()))
 
-	//ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-	//defer cancel()
+	ctx, step := util.Start(ctx, a.trace, logger, "Repo:Create")
+	var spanErr error
+	defer step.End(spanErr)
 
-	logger.Info("создание подписки")
+	logger.Info("создание задачи")
 
-	_, err := a.queries.CreateSubscription(ctx, sqlc.CreateSubscriptionParams{
-		ID:          sub.ID,
-		ServiceName: sub.ServiceName,
-		Price:       int32(sub.Price),
-		UserID:      sub.UserID,
-		StartDate:   sub.StartDate,
-		EndDate:     sub.EndDate,
+	task, err := a.queries.CreateTask(ctx, sqlc.CreateTaskParams{
+		Title: sub.Title,
+		Description: func(p *string) pgtype.Text {
+			if p == nil {
+				return pgtype.Text{Valid: false}
+			}
+			return pgtype.Text{String: *p, Valid: true}
+		}(sub.Description),
+		Status: pgtype.Text{String: string(sub.Status), Valid: true},
 	})
 	if err != nil {
-		return errwrap.SQLExecError(op, err)
+		spanErr = err
+		return uuid.Nil, errwrap.SQLExecError(op, err)
 	}
 
-	logger.Info("подписка создана")
-	return nil
+	logger.Info("задача создана")
+	return task.ID, nil
 }
 
-func (a *RepoSub) GetByID(ctx context.Context, id uuid.UUID) (*entity.Subscription, error) {
+func (a *RepoSub) GetByID(ctx context.Context, id uuid.UUID) (*entity.Task, error) {
 	const op = "GetByID"
 	logger := a.logg.With(zap.String("op", op), zap.String("id", id.String()))
 
-	//ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-	//defer cancel()
+	ctx, step := util.Start(ctx, a.trace, logger, "Repo:GetByID")
+	var spanErr error
+	defer step.End(spanErr)
 
 	if id == uuid.Nil {
-		return nil, errwrap.ErrUserIDEmpty(op)
+		err := errwrap.ErrUserIDEmpty(op)
+		spanErr = err
+		return nil, err
 	}
 
-	logger.Info("подписка получается по id")
+	logger.Info("получение задачи по id")
 
-	dbUser, err := a.queries.GetSubscriptionByID(ctx, id)
+	row, err := a.queries.GetTaskByID(ctx, id)
 	if err != nil {
 		if errors.Is(err, pgx.ErrNoRows) {
-			return nil, errwrap.NotFound(op, errors.New("subscription_not_found"))
+			spanErr = err
+			return nil, errwrap.NotFound(op, errors.New("task_not_found"))
 		}
+		spanErr = err
 		return nil, errwrap.SQLQueryError(op, err)
 	}
 
-	logger.Info("подписка получена")
+	logger.Info("задача получена")
 
-	return &entity.Subscription{
-		ID:          dbUser.ID,
-		ServiceName: dbUser.ServiceName,
-		Price:       int(dbUser.Price),
-		UserID:      dbUser.UserID,
-		StartDate:   dbUser.StartDate,
-		EndDate:     dbUser.EndDate,
-		CreatedAt:   dbUser.CreatedAt,
-		UpdatedAt:   dbUser.UpdatedAt,
-	}, nil
+	task := &entity.Task{
+		ID:          row.ID,
+		Title:       row.Title,
+		Description: textPtr(row.Description),
+		Status:      entity.Status(row.Status.String),
+		CreatedAt:   row.CreatedAt.Time,
+		UpdatedAt:   row.UpdatedAt.Time,
+		DeleteAt:    timePtr(row.DeletedAt),
+	}
+	return task, nil
 }
 
-func (a *RepoSub) Update(ctx context.Context, s *entity.Subscription) error {
+func (a *RepoSub) Update(ctx context.Context, s *entity.Task) error {
 	const op = "RepoSub.Update"
 	logger := a.logg.With(zap.String("op", op), zap.String("id", s.ID.String()))
 
-	//ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-	//defer cancel()
+	ctx, step := util.Start(ctx, a.trace, logger, "Repo:Update")
+	var spanErr error
+	defer step.End(spanErr)
 
-	logger.Info("обновление подписки")
+	logger.Info("обновление задачи")
 
-	_, err := a.queries.UpdateSubscription(ctx, sqlc.UpdateSubscriptionParams{
-		ID:          s.ID,
-		ServiceName: s.ServiceName,
-		Price:       int32(s.Price),
-		StartDate:   s.StartDate,
-		EndDate:     s.EndDate,
+	_, err := a.queries.UpdateTask(ctx, sqlc.UpdateTaskParams{
+		ID:    s.ID,
+		Title: s.Title,
+		Description: func(p *string) pgtype.Text {
+			if p == nil {
+				return pgtype.Text{Valid: false}
+			}
+			return pgtype.Text{String: *p, Valid: true}
+		}(s.Description),
+		Status: pgtype.Text{String: string(s.Status), Valid: true},
 	})
 	if err != nil {
+		spanErr = err
 		return errwrap.SQLExecError(op, err)
 	}
 
-	logger.Info("подписка обновлена")
+	logger.Info("задача обновлена")
 	return nil
 }
 
@@ -112,159 +133,100 @@ func (a *RepoSub) Delete(ctx context.Context, id uuid.UUID) error {
 	const op = "RepoSub.Delete"
 	logger := a.logg.With(zap.String("op", op), zap.String("id", id.String()))
 
-	//ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-	//defer cancel()
+	ctx, step := util.Start(ctx, a.trace, logger, "Repo:Delete")
+	var spanErr error
+	defer step.End(spanErr)
 
-	logger.Info("удаление подписки")
+	logger.Info("удаление задачи")
 
-	err := a.queries.DeleteSubscription(ctx, id)
-	if err != nil {
+	if err := a.queries.DeleteTask(ctx, id); err != nil {
+		spanErr = err
 		return errwrap.SQLExecError(op, err)
 	}
 
-	logger.Info("подписка помечена как удалённая")
+	logger.Info("задача помечена как удалённая")
 	return nil
 }
 
-func (a *RepoSub) List(ctx context.Context, limit, offset int) ([]*entity.Subscription, error) {
+func (a *RepoSub) List(ctx context.Context, limit, offset int) ([]*entity.Task, error) {
 	const op = "RepoSub.List"
 	logger := a.logg.With(zap.String("op", op))
 
-	//ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-	//defer cancel()
+	ctx, step := util.Start(ctx, a.trace, logger, "Repo:List")
+	var spanErr error
+	defer step.End(spanErr)
 
-	logger.Info("получение списка подписок")
+	logger.Info("получение списка задач")
 
-	dbSubs, err := a.queries.ListSubscriptions(ctx, sqlc.ListSubscriptionsParams{
+	rows, err := a.queries.ListTasks(ctx, sqlc.ListTasksParams{
 		Limit:  int32(limit),
 		Offset: int32(offset),
 	})
 	if err != nil {
+		spanErr = err
 		return nil, errwrap.SQLQueryError(op, err)
 	}
 
-	var result []*entity.Subscription
-	for _, s := range dbSubs {
-		result = append(result, &entity.Subscription{
-			ID:          s.ID,
-			ServiceName: s.ServiceName,
-			Price:       int(s.Price),
-			UserID:      s.UserID,
-			StartDate:   s.StartDate,
-			EndDate:     s.EndDate,
-			CreatedAt:   s.CreatedAt,
-			UpdatedAt:   s.UpdatedAt,
+	result := make([]*entity.Task, 0, len(rows))
+	for _, r := range rows {
+		result = append(result, &entity.Task{
+			ID:          r.ID,
+			Title:       r.Title,
+			Description: textPtr(r.Description),
+			Status:      entity.Status(r.Status.String),
+			CreatedAt:   r.CreatedAt.Time,
+			UpdatedAt:   r.UpdatedAt.Time,
 		})
 	}
 
-	logger.Info("подписки получены")
+	logger.Info("задачи получены")
 	return result, nil
 }
 
-func (a *RepoSub) Get(ctx context.Context) ([]*entity.Subscription, error) {
+func (a *RepoSub) Get(ctx context.Context) ([]*entity.Task, error) {
 	const op = "RepoSub.Get"
 	logger := a.logg.With(zap.String("op", op))
 
-	//ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-	//defer cancel()
+	ctx, step := util.Start(ctx, a.trace, logger, "Repo:GetAll")
+	var spanErr error
+	defer step.End(spanErr)
 
-	logger.Info("получение списка подписок")
+	logger.Info("получение всех задач")
 
-	dbSubs, err := a.queries.GetSubscriptions(ctx)
+	rows, err := a.queries.GetTasks(ctx)
 	if err != nil {
+		spanErr = err
 		return nil, errwrap.SQLQueryError(op, err)
 	}
 
-	var result []*entity.Subscription
-	for _, s := range dbSubs {
-		result = append(result, &entity.Subscription{
-			ID:          s.ID,
-			ServiceName: s.ServiceName,
-			Price:       int(s.Price),
-			UserID:      s.UserID,
-			StartDate:   s.StartDate,
-			EndDate:     s.EndDate,
-			CreatedAt:   s.CreatedAt,
-			UpdatedAt:   s.UpdatedAt,
+	result := make([]*entity.Task, 0, len(rows))
+	for _, r := range rows {
+		result = append(result, &entity.Task{
+			ID:          r.ID,
+			Title:       r.Title,
+			Description: textPtr(r.Description),
+			Status:      entity.Status(r.Status.String),
+			CreatedAt:   r.CreatedAt.Time,
+			UpdatedAt:   r.UpdatedAt.Time,
 		})
 	}
 
-	logger.Info("подписки получены")
+	logger.Info("задачи получены")
 	return result, nil
 }
 
-func (a *RepoSub) Total(ctx context.Context, filter *entity.TotalFilter) ([]*entity.Subscription, error) {
-	const op = "RepoSub.Total"
-	logger := a.logg.With(zap.String("op", op))
-
-	//ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-	//defer cancel()
-
-	logger.Info("получения массива подписок")
-	//костыли с таймстампом
-	arr, err := a.queries.GetTotalSubscription(ctx, sqlc.GetTotalSubscriptionParams{
-		StartDateFrom: filter.StartFrom,
-		StartDateTo: func() pgtype.Timestamp {
-			if filter.EndTo != nil {
-				var ts pgtype.Timestamp
-				_ = ts.Scan(*filter.EndTo)
-				return ts
-			}
-			return pgtype.Timestamp{Valid: false}
-		}(),
-		ServiceName: filter.ServiceName,
-		UserID:      filter.UserID,
-	})
-	if err != nil {
-		return nil, errwrap.SQLQueryError(op, err)
+func textPtr(t pgtype.Text) *string {
+	if !t.Valid {
+		return nil
 	}
-
-	logger.Info("подписки получены", zap.Any("total", arr))
-
-	return func(db []sqlc.Subscription) []*entity.Subscription {
-		result := make([]*entity.Subscription, len(arr))
-		for i, s := range arr {
-			result[i] = &entity.Subscription{
-				ID:          s.ID,
-				ServiceName: s.ServiceName,
-				Price:       int(s.Price),
-				UserID:      s.UserID,
-				StartDate:   s.StartDate,
-				EndDate:     s.EndDate,
-				CreatedAt:   s.CreatedAt,
-				UpdatedAt:   s.UpdatedAt,
-			}
-		}
-		return result
-	}(arr), nil
+	v := t.String
+	return &v
 }
 
-func (a *RepoSub) TotalSQL(ctx context.Context, filter *entity.TotalFilter) (int, error) {
-	const op = "RepoSub.Total"
-	logger := a.logg.With(zap.String("op", op))
-
-	//ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-	//defer cancel()
-
-	logger.Info("подсчет общей стоимости подписок")
-	//костыли с таймстампом
-	total, err := a.queries.GetTotalSubscriptionCost(ctx, sqlc.GetTotalSubscriptionCostParams{
-		StartDateFrom: filter.StartFrom,
-		StartDateTo: func() pgtype.Timestamp {
-			if filter.EndTo != nil {
-				var ts pgtype.Timestamp
-				_ = ts.Scan(*filter.EndTo)
-				return ts
-			}
-			return pgtype.Timestamp{Valid: false}
-		}(),
-		ServiceName: filter.ServiceName,
-		UserID:      filter.UserID,
-	})
-	if err != nil {
-		return 0, errwrap.SQLQueryError(op, err)
+func timePtr(ts pgtype.Timestamp) *time.Time {
+	if !ts.Valid {
+		return nil
 	}
-
-	logger.Info("стоимость подсчитана", zap.Int64("total", total))
-	return int(total), nil
+	v := ts.Time
+	return &v
 }

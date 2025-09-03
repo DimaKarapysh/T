@@ -15,97 +15,74 @@ definitions:
         example: invalid_guid
         type: string
     type: object
-  T_internal_entity.Subscription:
+  T_internal_entity.Status:
+    enum:
+    - new
+    - in_progress
+    - done
+    type: string
+    x-enum-varnames:
+    - StatusNew
+    - StatusInProgress
+    - StatusDone
+  T_internal_entity.Task:
     properties:
       created_at:
-        description: Для информации
         type: string
-      end_date:
-        description: Конец подписки (опционально)
+      delete_at:
+        type: string
+      description:
         type: string
       id:
-        description: Уникальный идентификатор записи
         type: string
-      price:
-        description: Цена в рублях
-        type: integer
-      service_name:
-        description: Название сервиса
-        type: string
-      start_date:
-        description: Начало подписки (месяц и год)
+      status:
+        $ref: '#/definitions/T_internal_entity.Status'
+      title:
         type: string
       updated_at:
-        description: Для информации
-        type: string
-      user_id:
-        description: UUID пользователя
         type: string
     type: object
-  internal_api_http_v01.CreateSubscriptionRequest:
+  internal_api_http_v01.CreateTaskRequest:
     properties:
-      end_date:
-        description: можно пустым
-        example: 12-2025
+      description:
+        example: Нужно реализовать CRUD на Fiber
         type: string
-      price:
-        example: 400
-        type: integer
-      service_name:
-        example: Yandex Plus
-        type: string
-      start_date:
-        description: формат MM-YYYY
-        example: 07-2025
-        type: string
-      user_id:
-        example: 60601fee-2bf1-4721-ae6f-7636e79a0cba
+      status:
+        allOf:
+        - $ref: '#/definitions/T_internal_entity.Status'
+        description: 'допустимые значения: new, in_progress, done'
+        enum:
+        - new
+        - in_progress
+        - done
+      title:
+        example: Сделать тестовое задание
         type: string
     type: object
-  internal_api_http_v01.TotalRequest:
+  internal_api_http_v01.UpdateTaskRequest:
     properties:
-      from:
-        description: MM-YYYY
-        example: 06-2024
+      description:
+        example: Добавить больше деталей
         type: string
-      service_name:
-        example: Netflix
-        type: string
-      to:
-        example: 08-2025
-        type: string
-      user_id:
-        example: 60601fee-2bf1-4721-ae6f-7636e79a0cba
-        type: string
-    type: object
-  internal_api_http_v01.UpdateSubscriptionRequest:
-    properties:
-      end_date:
-        description: можно пустым
-        example: 12-2025
-        type: string
-      price:
-        example: 400
-        type: integer
-      service_name:
-        example: Yandex Plus
-        type: string
-      start_date:
-        description: формат MM-YYYY
-        example: 07-2025
-        type: string
-      user_id:
-        example: 60601fee-2bf1-4721-ae6f-7636e79a0cba
+      status:
+        allOf:
+        - $ref: '#/definitions/T_internal_entity.Status'
+        enum:
+        - new
+        - in_progress
+        - done
+      title:
+        example: Обновлённый заголовок
         type: string
     type: object
 info:
   contact: {}
 paths:
-  /api/v1/subscriptions:
+  /api/v1/tasks:
     get:
       consumes:
       - application/json
-      description: Пагинированный список подписок
+      description: Пагинированный список задач
       parameters:
       - default: 20
         description: Максимум записей
@@ -127,7 +104,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/T_internal_entity.Subscription'
+              $ref: '#/definitions/T_internal_entity.Task'
             type: array
         "400":
           description: Bad Request
@@ -137,25 +114,25 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
-      summary: Получение списка подписок
+      summary: Получение списка задач
       tags:
-      - Subscriptions
+      - Tasks
     post:
       consumes:
       - application/json
-      description: Создание новой подписки для пользователя
+      description: Создание новой задачи для пользователя
       parameters:
       - description: Тело запроса
         in: body
         name: request
         required: true
         schema:
-          $ref: '#/definitions/internal_api_http_v01.CreateSubscriptionRequest'
+          $ref: '#/definitions/internal_api_http_v01.CreateTaskRequest'
       produces:
       - application/json
       responses:
         "201":
-          description: ID созданной подписки
+          description: ID созданной задачи
           schema:
             additionalProperties:
               type: string
@@ -168,17 +145,17 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
-      summary: Создать подписку
+      summary: Создать задачу
       tags:
-      - Subscriptions
-  /api/v1/subscriptions/{id}:
+      - Tasks
+  /api/v1/tasks/{id}:
     delete:
       consumes:
       - application/json
-      description: Удаляет подписку по её UUID (мягкое или жёсткое удаление зависит
+      description: Удаляет задачу по её UUID (мягкое или жёсткое удаление зависит
         от реализации)
       parameters:
-      - description: ID подписки (UUID)
+      - description: ID задачи (UUID)
         in: path
         name: id
         required: true
@@ -196,15 +173,15 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
-      summary: Удалить подписку
+      summary: Удалить задачу
       tags:
-      - Subscriptions
+      - Tasks
     get:
       consumes:
       - application/json
-      description: Возвращает подписку по UUID
+      description: Возвращает задачу по UUID
       parameters:
-      - description: ID подписки (UUID)
+      - description: ID задачи (UUID)
         in: path
         name: id
         required: true
@@ -215,7 +192,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/T_internal_entity.Subscription'
+            $ref: '#/definitions/T_internal_entity.Task'
         "400":
           description: Bad Request
           schema:
@@ -228,15 +205,15 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
-      summary: Получить подписку по ID
+      summary: Получить задачу по ID
       tags:
-      - Subscriptions
+      - Tasks
     put:
       consumes:
       - application/json
-      description: Обновление полей существующей подписки
+      description: Обновление полей существующей задачи
       parameters:
-      - description: ID подписки (UUID)
+      - description: ID задачи (UUID)
         in: path
         name: id
         required: true
@@ -246,7 +223,7 @@ paths:
         name: request
         required: true
         schema:
-          $ref: '#/definitions/internal_api_http_v01.UpdateSubscriptionRequest'
+          $ref: '#/definitions/internal_api_http_v01.UpdateTaskRequest'
       produces:
       - application/json
       responses:
@@ -260,39 +237,7 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
-      summary: Обновить подписку
+      summary: Обновить задачу
       tags:
-      - Subscriptions
-  /api/v1/subscriptions/total:
-    post:
-      consumes:
-      - application/json
-      description: Фильтрация по пользователю, сервису и периоду (через JSON)
-      parameters:
-      - description: Фильтры
-        in: body
-        name: request
-        required: true
-        schema:
-          $ref: '#/definitions/internal_api_http_v01.TotalRequest'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            additionalProperties:
-              type: integer
-            type: object
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/T_internal_api_http_v01_errors.ErrorResponse'
-      summary: Получение общей стоимости подписок
-      tags:
-      - Subscriptions
+      - Tasks
 swagger: "2.0"

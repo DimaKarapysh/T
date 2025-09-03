@@ -1,0 +1,103 @@
+{
+  "info": {
+    "name": "Tasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Сделать тестовое задание\",\n  \"description\": \"Нужно реализовать CRUD на Fiber\",\n  \"status\": \"new\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/tasks",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "tasks"]
+        }
+      }
+    },
+    {
+      "name": "Get Task By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/v1/tasks/{{task_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "tasks", "{{task_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Обновлённый заголовок\",\n  \"description\": \"Добавить больше деталей\",\n  \"status\": \"in_progress\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/tasks/{{task_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "tasks", "{{task_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/api/v1/tasks/{{task_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "tasks", "{{task_id}}"]
+        }
+      }
+    },
+    {
+      "name": "List Tasks (paginated)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/v1/tasks?limit=10&offset=0",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "tasks"],
+          "query": [
+            { "key": "limit", "value": "10" },
+            { "key": "offset", "value": "0" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Tasks (no pagination)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/v1/tasks/all",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "tasks", "all"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "task_id", "value": "6ba7b814-9dad-11d1-80b4-00c04fd430c8" }
+  ]
+}
