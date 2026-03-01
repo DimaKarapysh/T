@@ -73,7 +73,7 @@ test:
 .PHONY: up
 up:
 	@echo "starting docker-compose..."
-	docker-compose -f docker-compose.yml up --build
+	docker-compose -f docker-compose.yml up -d --build
 
 # Docker Compose остановка
 .PHONY: down
