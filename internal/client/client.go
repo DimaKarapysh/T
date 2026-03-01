@@ -2,6 +2,7 @@ package client
 
 import (
 	"T/internal/config"
+	"T/migrations"
 	"context"
 	"database/sql"
 	"fmt"
@@ -66,6 +67,8 @@ func RunMigrations(lc fx.Lifecycle, cfg *config.Config, logger *zap.Logger) erro
 	if err != nil {
 		return fmt.Errorf("failed to open DB for migration: %w", err)
 	}
+
+	goose.SetBaseFS(migrations.FS)
 
 	if err := goose.Up(db, "./migrations"); err != nil {
 		return fmt.Errorf("migration failed: %w", err)

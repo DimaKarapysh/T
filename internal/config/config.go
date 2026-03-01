@@ -8,7 +8,8 @@ import (
 )
 
 type JaegerConfig struct {
-	Endpoint string `envconfig:"JAEGER_ENDPOINT" default:"http://localhost:14268/api/traces"`
+	// без http:// и без /api/traces — просто host:port для gRPC
+	Endpoint string `envconfig:"JAEGER_ENDPOINT" default:"localhost:4317"`
 }
 type JWTConfig struct {
 	Secret     string        `envconfig:"JWT_SECRET" required:"true"`
